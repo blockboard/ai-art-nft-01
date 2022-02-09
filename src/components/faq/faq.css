@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+
+.faq{
+    padding-top: 50px;
+    height: 500px;
+    width: 100%;
+}
+
+.questionsHeader .QHh1{
+  margin-left: 35px;
+  color: #8f8f8f;
+  font-size: 30px;
+}
+
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  font-family: "Rowdies";
+}
+
+div.c{
+  position: relative;
+  margin:1em;
+  
+}
+
+input{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity:0;
+  visibility: 0;
+}
+
+.question{
+  background:#1b1b1b;
+  color:#acacac;
+  padding:1em;
+  position: relative;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+label::before{
+  content:"";
+  display: inline-block;
+  border: 15px solid transparent;
+  border-left:20px solid #acacac;
+}
+label{
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+div.answer{
+  border-radius: 10px;
+  max-height:0px;
+  overflow: hidden;
+  transition:max-height 0.5s;
+  background-color: #fff;
+  box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+div.answer p{
+  padding:2em;
+}
+input:checked ~ h1 label::before{
+  border-left:15px solid transparent;
+  border-top:20px solid #acacac;
+  margin-top:12px;
+  margin-right:10px;
+}
+input:checked ~ .question ~ div.answer{
+  max-height:100px;
+}

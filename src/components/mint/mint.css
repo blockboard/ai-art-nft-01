@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+
+.mint{
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 800px;
+}
+
+.action p{
+    font-family: "Rowdies";
+    color: #d3d3d3;
+    font-size: 50px;
+    margin-left: 100px;
+}
+
+.action button{
+    border: none;
+    background-color: #fbb037;
+    color: #000;
+    padding: 10px;
+    width: 200px;
+    border-radius: 10px;
+    font-family: "Rowdies";
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 270px;
+    margin-top: 20px;
+}
