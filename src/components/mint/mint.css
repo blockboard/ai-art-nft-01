@@ -15,7 +15,7 @@
     margin-left: 100px;
 }
 
-.action button{
+.action .mintBttn{
     border: none;
     background-color: #fbb037;
     color: #000;
@@ -26,5 +26,19 @@
     font-size: 30px;
     cursor: pointer;
     margin-left: 270px;
-    margin-top: 20px;
+    margin-top: 25px;
+}
+
+.action .connectBttn{
+    border: none;
+    background-color: #242424;
+    color: #fbb037;
+    padding: 10px;
+    width: 350px;
+    border-radius: 10px;
+    font-family: "Rowdies";
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 230px;
+    margin-top: 25px;
 }

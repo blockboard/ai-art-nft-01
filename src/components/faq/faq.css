@@ -47,8 +47,8 @@ input{
 label::before{
   content:"";
   display: inline-block;
-  border: 15px solid transparent;
-  border-left:20px solid #acacac;
+  border: 12px solid transparent;
+  border-left:17px solid #acacac;
 }
 label{
   cursor: pointer;
@@ -68,10 +68,10 @@ div.answer p{
   padding:2em;
 }
 input:checked ~ h1 label::before{
-  border-left:15px solid transparent;
-  border-top:20px solid #acacac;
-  margin-top:12px;
-  margin-right:10px;
+  border-left:12px solid transparent;
+  border-top:17px solid #acacac;
+  margin-top:15px;
+  margin-right:7px;
 }
 input:checked ~ .question ~ div.answer{
   max-height:100px;

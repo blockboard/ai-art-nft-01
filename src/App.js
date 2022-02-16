@@ -6,7 +6,7 @@ import Mint from './components/mint/mint'
 import Info from './components/info/info'
 import FAQ from './components/faq/faq'
 
-function App() {
+const App = () => {
   return(
     <>
     <Container maxWidth="lg">
