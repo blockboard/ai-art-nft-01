@@ -1,49 +1,38 @@
 import React, { useState } from 'react';
-// import { ethers } from 'ethers'
+import { ethers } from 'ethers'
 import gif from './eth.gif'
 import './mint.css'
 
 const Mint = () => {
   const [currentAccount, setCurrentAccount] = useState("");
 
-  const checkIfWalletIsConnected = async () => {
-    const { ethereum } = window;
-
-    if (!ethereum) {
-      console.log("Make sure you have metamask!")
-      return;
-    } else {
-      console.log("We have the ethereum object", ethereum);
-      console.log(window.ethereum.networkVersion, 'window.ethereum.networkVersion');
-    }
-    
-    const accounts = await ethereum.request({ method: 'eth_accounts' });
-    
-    if (accounts.length !== 0) {
-      const account = accounts[0];
-      console.log("Found an authorized account:", account);
-      setCurrentAccount(account)
-    } else {
-      console.log("No authorized account found")
-    }
-  }
-  
   const connectToWallet = async() => {
-    try {
-      const { ethereum } = window;
+    let provider;
 
-      if (!ethereum) {
-        alert("Get Metamask!");
-        return;
+      try {
+        if (window.ethereum) {
+          provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+          await window.ethereum.enable();
+        } else if (window.web3) {
+          provider = new ethers.providers.Web3Provider(
+            window.web3.currentProvider,
+            "any"
+          );
+        } else {
+          window.alert(
+            "Non-Ethereum browser detected. You should consider trying MetaMask!"
+          );
+          return 0;
+        }
+
+        const signer = provider.getSigner();
+        const signerAddress = await signer.getAddress();
+
+        setCurrentAccount(signerAddress);
+
+      } catch (error) {
+        throw new Error("An error happened in the ethereum checker.", { cause: error });
       }
-
-      const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-
-      console.log("Connected", accounts[0])
-      setCurrentAccount(accounts[0])
-    } catch (error) {
-      console.log(error)
-    }
   }
 
   const renderNotConnectedContainer = () => (
