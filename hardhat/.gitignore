@@ -1,0 +1,14 @@
+node_modules/
+cache/
+build/
+typechain/
+artifacts/
+artitems/
+json_items/
+output.json
+uploaded.json
+tree.json
+tree2.json
+coverage*
+.env
+yarn.lock
