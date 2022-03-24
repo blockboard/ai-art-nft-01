@@ -15,7 +15,7 @@ contract AiArt is ERC721, Ownable {
 
   address payable public immutable treasury;
   
-  uint256 public immutable totalAssetsSupply;4
+  uint256 public immutable totalAssetsSupply;
 
   // TODO: check the mitning fees
   uint256 public mintFees = 0.01 ether;
@@ -41,7 +41,7 @@ contract AiArt is ERC721, Ownable {
     totalAssetsSupply = 10000;
   }
 
-  function mintItem(address user_, string memory tokenURI_, uint256 tokenId_) private returns (uint256) {
+  function mintItem(address user_, string memory tokenURI_, uint256 tokenId_) public payable returns (uint256) {
     // TODO: Check tokenID boundries
     require(tokenIdMinted[tokenId_] == false, 'AiArt: TokenID has been minted already');
     require(0 <= tokenId_ && tokenId_ < totalAssetsSupply, 'AiArt: TokenID is exceeding 10000');
