@@ -76,3 +76,10 @@ input:checked ~ h1 label::before{
 input:checked ~ .question ~ div.answer{
   max-height:100px;
 }
+
+@media screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .faq{
+    padding-top: 100px;
+  }
+}

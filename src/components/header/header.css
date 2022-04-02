@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
 
-.header{
+.desktop-header{
     width: 100%;
     height: 100px;
     background-color: #000;
@@ -10,12 +10,8 @@
     right: 0;
     padding: 2rem 9%;
     z-index: 1000;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;          
+    flex-direction: row;
 }
 
 .logo{
@@ -58,4 +54,83 @@
 
 .sections .parts .mintB{
     color: #fbb037;
+}
+
+@media screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .logo h4{
+        font-size: 12px;
+    }
+    
+    .logo img{
+        height: 45px;
+    }
+    
+    .sections{
+        margin-left: 55px;
+    }
+
+    .sections .socialMediaA img{
+        height: 20px;
+        padding-left: 5px;
+    }
+    
+    .sections .parts .sectionsA{
+        text-decoration: none;
+        padding: 2px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    /* For mobile phones: */
+    .desktop-header{
+        width: 110%;
+        margin-left: -20px;
+    }
+
+    .logo h4{
+        font-size: 10px;
+    }
+    
+    .logo img{
+        height: 35px;
+    }
+    
+    .sections{
+        margin-left: 85px;
+    }
+
+    .sections .socialMediaA img{
+        height: 15px;
+    }
+    
+    .sections .parts .sectionsA{
+        padding: 1.8px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    /* For mobile phones: */
+    .desktop-header{
+        width: 110%;
+        margin-left: -20px;
+    }
+    
+    .logo h4{
+        font-size: 10px;
+    }
+
+    .sections{
+        margin-left: 100px;
+    }
+    
+    .logo img{
+        height: 25px;
+    }
+    
+    .sections .parts .sectionsA{
+        padding: 1.5px;
+        font-size: 10px;
+    }
 }

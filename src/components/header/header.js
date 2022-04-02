@@ -6,7 +6,8 @@ import discord from './discord.png'
 
 function header() {
   return(
-      <div className='header'>
+    <>
+      <div className='desktop-header'>
         <div className='logo'>
             <img src={logo} alt='logo'/>
             <h4>AI Art</h4>
@@ -27,10 +28,8 @@ function header() {
                 </a>
             </div>           
         </div>
-        {/* <div className='socialMedia'>
-            
-        </div> */}
       </div>
+    </>
   )
 }
 

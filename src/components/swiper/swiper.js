@@ -17,13 +17,19 @@ function swiper() {
         <Swiper
             className='swiper'
             modules={[Autoplay]}
-            spaceBetween={50}
-            slidesPerView={3}
+            slidesPerView={1}
             speed={5000}
             loop="true"
             autoplay={{
                 delay:1,
                 disableOnInteraction: false                
+            }}
+            breakpoints={{
+              // when window width is >= 768px
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 50
+              },
             }}
             >
             <div className='swiper-wrapper'>
