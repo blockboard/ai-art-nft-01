@@ -8,6 +8,7 @@ import jsonFile from '../../data/hashed.json'
 const Mint = () => {
   const [currentAccount, setCurrentAccount] = useState("");
   const [miningAnimation, setMiningAnimation] = useState(false);
+  const [allMintedAnimation, setAllMintedAnimation] = useState(false);
   
   const connectToWallet = async() => {
     let provider;
@@ -75,29 +76,34 @@ const Mint = () => {
             let currentTotalSupply = parseInt(totalSupply);
 
             console.log("current total supply " + currentTotalSupply)
+            if(currentTotalSupply === 100){
+              console.log("hii")
+              setAllMintedAnimation(true)
+            }
+            else{
+              const fees = await contract.mintFees();
 
-            const fees = await contract.mintFees();
+              const rawTx = {
+                value: fees,
+                gasLimit: ethers.BigNumber.from("400000")
+              }
 
-            const rawTx = {
-              value: fees,
-              gasLimit: ethers.BigNumber.from("400000")
-           }
-
-            try{
-              console.log(currentTotalSupply)
-              let tx = await contract
-              .connect(signer)
-              .mintItem(currentAccount,jsonFile[currentTotalSupply+1],currentTotalSupply+1,rawTx);
+              try{
+                console.log(currentTotalSupply)
+                let tx = await contract
+                .connect(signer)
+                .mintItem(currentAccount,jsonFile[currentTotalSupply+1],currentTotalSupply+1,rawTx);
 
 
-              setMiningAnimation(true);
-              await tx.wait()
-              console.log(tx)
-              console.log(`Mined, see transaction at: https://rinkeby.etherscan.io/tx/${tx.hash}`)
-              alert(`Mined, see transaction at: https://rinkeby.etherscan.io/tx/${tx.hash}`)
-              setMiningAnimation(false)
-            }catch(error){
-              console.log(error)
+                setMiningAnimation(true);
+                await tx.wait()
+                console.log(tx)
+                console.log(`Mined, see transaction at: https://rinkeby.etherscan.io/tx/${tx.hash}`)
+                alert(`Mined, see transaction at: https://rinkeby.etherscan.io/tx/${tx.hash}`)
+                setMiningAnimation(false)
+              }catch(error){
+                console.log(error)
+              }
             }
 
           } else { 
@@ -123,32 +129,50 @@ const Mint = () => {
     </button>
   );
 
-  if(miningAnimation === false){
+  if(allMintedAnimation === true){
     return(
       <div id='mint' className='mint'>
           <div className='gif'>
             <img src={gif} alt='gif'/>
           </div>
-          <div className='action'>
-            <p>Mint your generated NFT among 1000+ ones</p>
-            {currentAccount === "" ? renderNotConnectedContainer() : renderMintUI()}
+          <div className='allMintedAction'>
+            <p>All NFTs are minted! <br/><span className='viewUs'>View collection on</span></p>
+            <button className='openSeaBttn'>
+              <a href='https://opensea.io/' target='_blank' rel='noreferrer'>OpenSea</a>
+            </button>     
           </div>
       </div>
   );
+  }else{
+    if(miningAnimation === false){
+      return(
+        <div id='mint' className='mint'>
+            <div className='gif'>
+              <img src={gif} alt='gif'/>
+            </div>
+            <div className='action'>
+              <p>Mint your generated NFT among 1000+ ones</p>
+              {currentAccount === "" ? renderNotConnectedContainer() : renderMintUI()}
+            </div>
+        </div>
+    );
+    }
+    return(
+      <div id='mint' className='mint'>
+            <div className='gif'>
+              <img src={gif} alt='gif'/>
+            </div>
+            <div className='action'>
+              <p>Mint your generated NFT among 1000+ ones</p>
+              <button className='mintingBttn mintBttn'>Minting 
+                <div className='dot-elastic'></div>
+              </button>
+            </div>
+        </div>
+    )
   }
-  return(
-    <div id='mint' className='mint'>
-          <div className='gif'>
-            <img src={gif} alt='gif'/>
-          </div>
-          <div className='action'>
-            <p>Mint your generated NFT among 1000+ ones</p>
-            <button className='mintingBttn mintBttn'>Minting 
-              <div className='dot-elastic'></div>
-            </button>
-          </div>
-      </div>
-  )
+
+  
 }
 
 export default Mint;

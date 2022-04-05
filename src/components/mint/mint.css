@@ -140,6 +140,36 @@
     }
   }
 
+  .allMintedAction p{
+    font-family: "Rowdies";
+    color: #d3d3d3;
+    font-size: 50px;
+    margin-left: 100px;
+
+  }
+
+  .viewUs{
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  .openSeaBttn{
+    background-color: #2081E2;
+    border: none;
+    width: 200px;
+    padding: 10px;
+    font-size: 30px;
+    font-family: 'Rowdies';
+    border-radius: 10px;
+    margin-left: 240px;
+    margin-top: 30px;
+  }
+
+  .openSeaBttn a{
+    text-decoration: none;
+    color: #fff;
+  }
+
 @media screen and (max-width: 768px) {
     /* For mobile phones: */
     .mint{
@@ -174,6 +204,23 @@
         margin-left: 25px;
         margin-top: 10px;
       }
+
+    .allMintedAction p{
+      font-size: 15px;
+      margin-left: 20px;
+    }
+    
+    .viewUs{
+      margin-left: 8px;
+    }
+    
+    .openSeaBttn{
+      width: 100px;
+      padding: 5px;
+      font-size: 15px;
+      margin-top: 10px;
+      margin-left: 40px;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -225,5 +272,22 @@
 .dot-elastic {
     margin-left: 20px;
     margin-top: 7px;
+  }
+
+  .allMintedAction p{
+    font-size: 15px;
+    margin-left: 20px;
+  }
+
+  .viewUs{
+    margin-left: 8px;
+  }
+
+  .openSeaBttn{
+    width: 100px;
+    padding: 5px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 40px;
   }
 }
