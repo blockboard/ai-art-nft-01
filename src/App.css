@@ -17,15 +17,65 @@ body::-webkit-scrollbar{
 .footer{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .footer .VCA{
   margin-bottom: 50px;
+  padding-right: 10px;
+  margin-left: 10px;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.VCA p{
+  margin-left: 110px;
+  padding-bottom: 10px;
 }
 
 .VCA .address{
   color: #fbb037;
   margin-left: 2px;
 }
+
+.openSeaLogo{
+  margin-bottom: 40px;
+  margin-right: 10px;
+  height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .footer{
+    font-size: 10px;
+  }
+  
+  .VCA p{
+    margin-left: 80px;
+  }
+
+  .openSeaLogo{
+    margin-bottom: 45px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  /* For mobile phones: */
+  .footer .VCA{
+    margin-bottom: 50px;
+    padding-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .VCA p{
+    margin-left: 70px;
+  }
+
+  .openSeaLogo{
+    margin-bottom: 40px;
+    height: 30px;
+  }
+}
+

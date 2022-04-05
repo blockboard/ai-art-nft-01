@@ -21,3 +21,16 @@
     border-radius: 10px;
 }
 
+@media screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .assets{
+        padding-top: 100px;
+        height: 400px;
+    }
+
+    .slide img{
+        height: 300px;
+        border-radius: 10px;
+    }
+}
+

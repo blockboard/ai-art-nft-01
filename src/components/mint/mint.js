@@ -7,7 +7,7 @@ import jsonFile from '../../data/hashed.json'
 
 const Mint = () => {
   const [currentAccount, setCurrentAccount] = useState("");
-  const [currentTotalSupply, setCurrentTotalSupply] = useState(0)
+  const [miningAnimation, setMiningAnimation] = useState(false);
   
   const connectToWallet = async() => {
     let provider;
@@ -72,7 +72,9 @@ const Mint = () => {
             let contract = new ethers.Contract(addresses[networkChainId].AI_ART ,AI_ART_ABI ,signer);
 
             let totalSupply = await contract.totalSupply();
-            setCurrentTotalSupply(parseInt(totalSupply)); 
+            let currentTotalSupply = parseInt(totalSupply);
+
+            console.log("current total supply " + currentTotalSupply)
 
             const fees = await contract.mintFees();
 
@@ -87,9 +89,13 @@ const Mint = () => {
               .connect(signer)
               .mintItem(currentAccount,jsonFile[currentTotalSupply+1],currentTotalSupply+1,rawTx);
 
-              let receipt = await tx.wait();
-              setCurrentTotalSupply(currentTotalSupply);
 
+              setMiningAnimation(true);
+              await tx.wait()
+              console.log(tx)
+              console.log(`Mined, see transaction at: https://rinkeby.etherscan.io/tx/${tx.hash}`)
+              alert(`Mined, see transaction at: https://rinkeby.etherscan.io/tx/${tx.hash}`)
+              setMiningAnimation(false)
             }catch(error){
               console.log(error)
             }
@@ -117,7 +123,8 @@ const Mint = () => {
     </button>
   );
 
-  return(
+  if(miningAnimation === false){
+    return(
       <div id='mint' className='mint'>
           <div className='gif'>
             <img src={gif} alt='gif'/>
@@ -128,6 +135,20 @@ const Mint = () => {
           </div>
       </div>
   );
+  }
+  return(
+    <div id='mint' className='mint'>
+          <div className='gif'>
+            <img src={gif} alt='gif'/>
+          </div>
+          <div className='action'>
+            <p>Mint your generated NFT among 1000+ ones</p>
+            <button className='mintingBttn mintBttn'>Minting 
+              <div className='dot-elastic'></div>
+            </button>
+          </div>
+      </div>
+  )
 }
 
 export default Mint;
