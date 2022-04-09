@@ -2,7 +2,7 @@
 
 // File @openzeppelin/contracts/utils/Context.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -30,7 +30,7 @@ abstract contract Context {
 
 // File @openzeppelin/contracts/introspection/IERC165.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -58,7 +58,7 @@ interface IERC165 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.2 <0.8.0;
 
@@ -189,7 +189,7 @@ interface IERC721 is IERC165 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721Metadata.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.2 <0.8.0;
 
@@ -218,7 +218,7 @@ interface IERC721Metadata is IERC721 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.2 <0.8.0;
 
@@ -249,7 +249,7 @@ interface IERC721Enumerable is IERC721 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721Receiver.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -274,7 +274,7 @@ interface IERC721Receiver {
 
 // File @openzeppelin/contracts/introspection/ERC165.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -330,7 +330,7 @@ abstract contract ERC165 is IERC165 {
 
 // File @openzeppelin/contracts/math/SafeMath.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -548,7 +548,7 @@ library SafeMath {
 
 // File @openzeppelin/contracts/utils/Address.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.2 <0.8.0;
 
@@ -741,7 +741,7 @@ library Address {
 
 // File @openzeppelin/contracts/utils/EnumerableSet.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -1042,7 +1042,7 @@ library EnumerableSet {
 
 // File @openzeppelin/contracts/utils/EnumerableMap.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -1312,7 +1312,7 @@ library EnumerableMap {
 
 // File @openzeppelin/contracts/utils/Strings.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -1350,7 +1350,7 @@ library Strings {
 
 // File @openzeppelin/contracts/token/ERC721/ERC721.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -1828,51 +1828,9 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable 
 }
 
 
-// File @openzeppelin/contracts/utils/Counters.sol@v3.4.2
-
-//   MIT
-
-pragma solidity >=0.6.0 <0.8.0;
-
-/**
- * @title Counters
- * @author Matt Condon (@shrugs)
- * @dev Provides counters that can only be incremented or decremented by one. This can be used e.g. to track the number
- * of elements in a mapping, issuing ERC721 ids, or counting request ids.
- *
- * Include with `using Counters for Counters.Counter;`
- * Since it is not possible to overflow a 256 bit integer with increments of one, `increment` can skip the {SafeMath}
- * overflow check, thereby saving gas. This does assume however correct usage, in that the underlying `_value` is never
- * directly accessed.
- */
-library Counters {
-    using SafeMath for uint256;
-
-    struct Counter {
-        // This variable should never be directly accessed by users of the library: interactions must be restricted to
-        // the library's function. As of Solidity v0.5.2, this cannot be enforced, though there is a proposal to add
-        // this feature: see https://github.com/ethereum/solidity/issues/4637
-        uint256 _value; // default: 0
-    }
-
-    function current(Counter storage counter) internal view returns (uint256) {
-        return counter._value;
-    }
-
-    function increment(Counter storage counter) internal {
-        // The {SafeMath} overflow check can be skipped here, see the comment at the top
-        counter._value += 1;
-    }
-
-    function decrement(Counter storage counter) internal {
-        counter._value = counter._value.sub(1);
-    }
-}
-
-
 // File @openzeppelin/contracts/access/Ownable.sol@v3.4.2
 
-//   MIT
+//    MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -1941,156 +1899,61 @@ abstract contract Ownable is Context {
 }
 
 
-// File @openzeppelin/contracts/token/ERC20/IERC20.sol@v3.4.2
+// File contracts/Kemosabe.sol
 
 //   MIT
-
-pragma solidity >=0.6.0 <0.8.0;
-
-/**
- * @dev Interface of the ERC20 standard as defined in the EIP.
- */
-interface IERC20 {
-    /**
-     * @dev Returns the amount of tokens in existence.
-     */
-    function totalSupply() external view returns (uint256);
-
-    /**
-     * @dev Returns the amount of tokens owned by `account`.
-     */
-    function balanceOf(address account) external view returns (uint256);
-
-    /**
-     * @dev Moves `amount` tokens from the caller's account to `recipient`.
-     *
-     * Returns a boolean value indicating whether the operation succeeded.
-     *
-     * Emits a {Transfer} event.
-     */
-    function transfer(address recipient, uint256 amount) external returns (bool);
-
-    /**
-     * @dev Returns the remaining number of tokens that `spender` will be
-     * allowed to spend on behalf of `owner` through {transferFrom}. This is
-     * zero by default.
-     *
-     * This value changes when {approve} or {transferFrom} are called.
-     */
-    function allowance(address owner, address spender) external view returns (uint256);
-
-    /**
-     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
-     *
-     * Returns a boolean value indicating whether the operation succeeded.
-     *
-     * IMPORTANT: Beware that changing an allowance with this method brings the risk
-     * that someone may use both the old and the new allowance by unfortunate
-     * transaction ordering. One possible solution to mitigate this race
-     * condition is to first reduce the spender's allowance to 0 and set the
-     * desired value afterwards:
-     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-     *
-     * Emits an {Approval} event.
-     */
-    function approve(address spender, uint256 amount) external returns (bool);
-
-    /**
-     * @dev Moves `amount` tokens from `sender` to `recipient` using the
-     * allowance mechanism. `amount` is then deducted from the caller's
-     * allowance.
-     *
-     * Returns a boolean value indicating whether the operation succeeded.
-     *
-     * Emits a {Transfer} event.
-     */
-    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
-
-    /**
-     * @dev Emitted when `value` tokens are moved from one account (`from`) to
-     * another (`to`).
-     *
-     * Note that `value` may be zero.
-     */
-    event Transfer(address indexed from, address indexed to, uint256 value);
-
-    /**
-     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
-     * a call to {approve}. `value` is the new allowance.
-     */
-    event Approval(address indexed owner, address indexed spender, uint256 value);
-}
-
-
-// File contracts/AiArt.sol
-
-//  MIT
 
 pragma solidity 0.7.5;
 pragma abicoder v2;
 
 
-
-
-contract AiArt is ERC721, Ownable {
-  using Counters for Counters.Counter;
-  
-  Counters.Counter private _tokenIds;
-
+contract Kemosabe is ERC721, Ownable {  
   address payable public immutable treasury;
   
   uint256 public immutable totalAssetsSupply;
 
-  // TODO: check the mitning fees
-  uint256 public mintFees = 0.01 ether;
+  uint256 public mintFees = 0.2 ether;
 
   mapping (bytes32 => bool) public minted;
 
-  //this marks an item in IPFS as "forsale"
+  // This marks an item in IPFS as "forsale"
   mapping (uint256 => bool) public tokenIdMinted;
 
-  //this lets you look up a token by the uri (assuming there is only one of each uri for now)
+  // This lets you look up a token by the uri (assuming there is only one of each uri for now)
   mapping (bytes32 => uint256) public uriToTokenId;
 
   // This is a packed array of booleans.
   mapping(uint256 => uint256) private _claimedBitMap;
 
-  event Claimed(uint256 index_, string tokenURI_);
+  event Minted(address indexed user_, uint256 indexed tokenId_, string indexed tokenURI_);
 
-  constructor(address payable treasury_) ERC721("AiArt", "AA") {
+  constructor() ERC721("Kemosabe", "KS") {
     _setBaseURI("https://ipfs.io/ipfs/");
 
-    treasury = treasury_;
-    // TODO: Check the totalSupply
-    totalAssetsSupply = 10000;
+    treasury = _msgSender();
+    totalAssetsSupply = 100;
   }
 
-  function mintItem(address user_, string memory tokenURI_, uint256 tokenId_) public payable returns (uint256) {
-    // TODO: Check tokenID boundries
-    require(tokenIdMinted[tokenId_] == false, 'AiArt: TokenID has been minted already');
-    require(0 <= tokenId_ && tokenId_ < totalAssetsSupply, 'AiArt: TokenID is exceeding 10000');
-
-    require(msg.value >= mintFees, "AiArt: Not sufficient amount of ETH.");
-    treasury.transfer(msg.value);
-
+  function mintItem(address user_, uint256 tokenId_, string memory tokenURI_) public payable returns (uint256) {
     bytes32 uriHash = keccak256(abi.encodePacked(tokenURI_));
 
-    // Check if uriHash is minted already.
-    require(minted[uriHash] == false, "MachineMasks: tokenURI_ is minted already.");
-
-    //minted[uriHash] = true;
+    require(0 <= tokenId_ && tokenId_ < totalAssetsSupply, "Kemosabe: Invalid tokenId_");    
+    require(tokenIdMinted[tokenId_] == false, "Kemosabe: tokenId_ has been minted already");
+    require(minted[uriHash] == false, "Kemosabe: tokenURI_ is minted already.");
+    require(msg.value >= mintFees, "Kemosabe: Not sufficient amount of ETH.");
+    
+    treasury.transfer(msg.value);
 
     uint256 id = tokenId_;
     
     _mint(user_, id);
     _setTokenURI(id, tokenURI_);
 
-    // TODO: Testing tokenID starting from zero
-    _tokenIds.increment();
-
     uriToTokenId[uriHash] = id;
     tokenIdMinted[id] = true;
     minted[uriHash] = true;
+
+    emit Minted(user_, tokenId_, tokenURI_);
 
     return id;
   }

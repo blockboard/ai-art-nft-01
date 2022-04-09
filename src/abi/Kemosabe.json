@@ -1,12 +1,6 @@
 [
   {
-    "inputs": [
-      {
-        "internalType": "address payable",
-        "name": "treasury_",
-        "type": "address"
-      }
-    ],
+    "inputs": [],
     "stateMutability": "nonpayable",
     "type": "constructor"
   },
@@ -64,19 +58,25 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
+        "internalType": "address",
+        "name": "user_",
+        "type": "address"
+      },
+      {
+        "indexed": true,
         "internalType": "uint256",
-        "name": "index_",
+        "name": "tokenId_",
         "type": "uint256"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "string",
         "name": "tokenURI_",
         "type": "string"
       }
     ],
-    "name": "Claimed",
+    "name": "Minted",
     "type": "event"
   },
   {
@@ -237,14 +237,14 @@
         "type": "address"
       },
       {
-        "internalType": "string",
-        "name": "tokenURI_",
-        "type": "string"
-      },
-      {
         "internalType": "uint256",
         "name": "tokenId_",
         "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "tokenURI_",
+        "type": "string"
       }
     ],
     "name": "mintItem",
