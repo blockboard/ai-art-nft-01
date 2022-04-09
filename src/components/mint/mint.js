@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import gif from './eth.gif';
 import './mint.css';
-import { addresses, AI_ART_ABI } from '../../constants/contracts';
+import { addresses, AI_ART_ABI, TOTAL_SUPPLY, GAS_LIMIT } from '../../constants/contracts';
 import jsonFile from '../../data/hashed.json';
 
 const Mint = () => {
   const [currentAccount, setCurrentAccount] = useState('');
   const [miningAnimation, setMiningAnimation] = useState(false);
   const [allMintedAnimation, setAllMintedAnimation] = useState(false);
+  // TODO: make a function to return provider
   const connectToWallet = async () => {
     let provider;
     try {
@@ -57,19 +58,23 @@ const Mint = () => {
         const networkChainId = network.chainId;
 
         if (networkChainId === 4) {
-          let contract = new ethers.Contract(addresses[networkChainId].AI_ART, AI_ART_ABI, signer);
+          const contract = new ethers.Contract(
+            addresses[networkChainId].AI_ART,
+            AI_ART_ABI,
+            signer
+          );
 
-          let totalSupply = await contract.totalSupply();
-          let currentTotalSupply = parseInt(totalSupply);
+          const totalSupply = await contract.totalSupply();
+          const currentTotalSupply = parseInt(totalSupply);
 
-          if (currentTotalSupply === 100) {
+          if (currentTotalSupply === TOTAL_SUPPLY) {
             setAllMintedAnimation(true);
           } else {
             const fees = await contract.mintFees();
 
             const rawTx = {
               value: fees,
-              gasLimit: ethers.BigNumber.from('400000')
+              gasLimit: ethers.BigNumber.from(GAS_LIMIT)
             };
 
             try {
