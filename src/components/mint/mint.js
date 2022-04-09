@@ -9,6 +9,7 @@ const Mint = () => {
   const [currentAccount, setCurrentAccount] = useState('');
   const [miningAnimation, setMiningAnimation] = useState(false);
   const [allMintedAnimation, setAllMintedAnimation] = useState(false);
+  // TODO: make a function to return provider
   const connectToWallet = async () => {
     let provider;
     try {
@@ -57,10 +58,14 @@ const Mint = () => {
         const networkChainId = network.chainId;
 
         if (networkChainId === 4) {
-          let contract = new ethers.Contract(addresses[networkChainId].AI_ART, AI_ART_ABI, signer);
+          const contract = new ethers.Contract(
+            addresses[networkChainId].AI_ART,
+            AI_ART_ABI,
+            signer
+          );
 
-          let totalSupply = await contract.totalSupply();
-          let currentTotalSupply = parseInt(totalSupply);
+          const totalSupply = await contract.totalSupply();
+          const currentTotalSupply = parseInt(totalSupply);
 
           if (currentTotalSupply === TOTAL_SUPPLY) {
             setAllMintedAnimation(true);
