@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import gif from './eth.gif';
 import './mint.css';
-import { addresses, AI_ART_ABI } from '../../constants/contracts';
+import { addresses, AI_ART_ABI, TOTAL_SUPPLY, GAS_LIMIT } from '../../constants/contracts';
 import jsonFile from '../../data/hashed.json';
 
 const Mint = () => {
@@ -62,14 +62,14 @@ const Mint = () => {
           let totalSupply = await contract.totalSupply();
           let currentTotalSupply = parseInt(totalSupply);
 
-          if (currentTotalSupply === 100) {
+          if (currentTotalSupply === TOTAL_SUPPLY) {
             setAllMintedAnimation(true);
           } else {
             const fees = await contract.mintFees();
 
             const rawTx = {
               value: fees,
-              gasLimit: ethers.BigNumber.from('400000')
+              gasLimit: ethers.BigNumber.from(GAS_LIMIT)
             };
 
             try {
