@@ -37,6 +37,7 @@ body::-webkit-scrollbar{
 .VCA .address{
   color: #fbb037;
   margin-left: 2px;
+  text-decoration: none;
 }
 
 .openSeaLogo{

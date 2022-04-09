@@ -6,6 +6,7 @@ import Swiper from './components/swiper/swiper';
 import Mint from './components/mint/mint';
 import Info from './components/info/info';
 import FAQ from './components/faq/faq';
+import { addresses } from '../src/constants/contracts';
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
               target="_blank"
               rel="noreferrer"
               className="address">
-              0xD2E9613489476bb08B782c56d41c4aDB660AB0Bc
+              {addresses[4].AI_ART}
             </a>
           </div>
           <a href="https://opensea.io/" target="_blank" rel="noreferrer" className="socialMediaA">
