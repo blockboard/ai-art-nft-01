@@ -2,7 +2,7 @@
 
 // File @openzeppelin/contracts/utils/Context.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -30,7 +30,7 @@ abstract contract Context {
 
 // File @openzeppelin/contracts/introspection/IERC165.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -58,7 +58,7 @@ interface IERC165 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.2 <0.8.0;
 
@@ -189,7 +189,7 @@ interface IERC721 is IERC165 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721Metadata.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.2 <0.8.0;
 
@@ -218,7 +218,7 @@ interface IERC721Metadata is IERC721 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.2 <0.8.0;
 
@@ -249,7 +249,7 @@ interface IERC721Enumerable is IERC721 {
 
 // File @openzeppelin/contracts/token/ERC721/IERC721Receiver.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -274,7 +274,7 @@ interface IERC721Receiver {
 
 // File @openzeppelin/contracts/introspection/ERC165.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -330,7 +330,7 @@ abstract contract ERC165 is IERC165 {
 
 // File @openzeppelin/contracts/math/SafeMath.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -548,7 +548,7 @@ library SafeMath {
 
 // File @openzeppelin/contracts/utils/Address.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.2 <0.8.0;
 
@@ -741,7 +741,7 @@ library Address {
 
 // File @openzeppelin/contracts/utils/EnumerableSet.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -1042,7 +1042,7 @@ library EnumerableSet {
 
 // File @openzeppelin/contracts/utils/EnumerableMap.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -1312,7 +1312,7 @@ library EnumerableMap {
 
 // File @openzeppelin/contracts/utils/Strings.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -1350,7 +1350,7 @@ library Strings {
 
 // File @openzeppelin/contracts/token/ERC721/ERC721.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -1830,7 +1830,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable 
 
 // File @openzeppelin/contracts/access/Ownable.sol@v3.4.2
 
-//    MIT
+//     MIT
 
 pragma solidity >=0.6.0 <0.8.0;
 
@@ -1901,7 +1901,7 @@ abstract contract Ownable is Context {
 
 // File contracts/Kemosabe.sol
 
-//   MIT
+//    MIT
 
 pragma solidity 0.7.5;
 pragma abicoder v2;
@@ -1937,7 +1937,7 @@ contract Kemosabe is ERC721, Ownable {
   function mintItem(address user_, uint256 tokenId_, string memory tokenURI_) public payable returns (uint256) {
     bytes32 uriHash = keccak256(abi.encodePacked(tokenURI_));
 
-    require(0 <= tokenId_ && tokenId_ < totalAssetsSupply, "Kemosabe: Invalid tokenId_");    
+    require(1 <= tokenId_ && tokenId_ <= totalAssetsSupply, "Kemosabe: Invalid tokenId_");    
     require(tokenIdMinted[tokenId_] == false, "Kemosabe: tokenId_ has been minted already");
     require(minted[uriHash] == false, "Kemosabe: tokenURI_ is minted already.");
     require(msg.value >= mintFees, "Kemosabe: Not sufficient amount of ETH.");
