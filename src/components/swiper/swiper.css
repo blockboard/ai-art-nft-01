@@ -33,8 +33,11 @@
 @media screen and (max-width: 768px) {
     /* For mobile phones: */
     .assets{
-        padding-top: 100px;
-        height: 400px;
+        height: 450px;
+    }
+
+    .assets .assets-header{
+        font-size: 20px;
     }
 
     .slide img{
