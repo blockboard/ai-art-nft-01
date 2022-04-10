@@ -2,7 +2,7 @@
 
 .faq{
     padding-top: 50px;
-    height: 500px;
+    height: 400px;
     width: 100%;
 }
 
@@ -61,7 +61,7 @@ div.answer{
   max-height:0px;
   overflow: hidden;
   transition:max-height 0.5s;
-  background-color: #fff;
+  background-color: rgb(214, 214, 214);
   box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 div.answer p{
@@ -76,7 +76,11 @@ input:checked ~ h1 label::before{
 input:checked ~ .question ~ div.answer{
   max-height:100px;
 }
-
+a{
+  text-decoration: none;
+  color:steelblue;
+  cursor: pointer;
+}
 @media screen and (max-width: 768px) {
   /* For mobile phones: */
   .faq{

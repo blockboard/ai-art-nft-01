@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+
+.key-info{
+    margin-top: 50px ;
+    margin-bottom: 200px;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    font-family: "Rowdies";
+}
+
+.key-info-paragraph{
+    padding-top: 20px;
+}
+
+.key-info-header{
+    color: #8f8f8f;
+}
+
+@media screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .key-info{
+        margin-top: 100px;
+    }
+    .key-info-header{
+        font-size: 25px;
+    }
+
+    .key-info-paragraph{
+        font-size: 15px;
+    }
+
+}

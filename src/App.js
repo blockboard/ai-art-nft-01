@@ -6,6 +6,7 @@ import Swiper from './components/swiper/swiper';
 import Mint from './components/mint/mint';
 import Info from './components/info/info';
 import FAQ from './components/faq/faq';
+import KeyInfo from './components/keyInfo/keyInfo';
 import { addresses } from '../src/constants/contracts';
 
 const App = () => {
@@ -17,16 +18,17 @@ const App = () => {
         <Mint></Mint>
         <Info></Info>
         <FAQ></FAQ>
+        <KeyInfo></KeyInfo>
         <hr className="hr"></hr>
         <div className="footer">
           <div className="VCA">
             <p>Verified Contract Address</p>
             <a
-              href="https://testnets.opensea.io/account"
+              href="https://etherscan.io/address/0xf8aac53aadcb4fc3326a440a83b3afead7732997"
               target="_blank"
               rel="noreferrer"
               className="address">
-              {addresses[4].AI_ART}
+              {addresses[1].KEMOSABE}
             </a>
           </div>
           <a href="https://opensea.io/" target="_blank" rel="noreferrer" className="socialMediaA">

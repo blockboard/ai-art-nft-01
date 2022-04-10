@@ -11,31 +11,32 @@ function faq() {
         <div className="c">
           <input type="checkbox" id="faq-1" />
           <h1 className="question">
-            <label htmlFor="faq-1">What Is This ?</label>
+            <label htmlFor="faq-1">What does Kemosabe mean?</label>
           </h1>
           <div className="answer">
-            <p>This a very very simple accordion.</p>
+            <p>Kemosabe is “Good Friend”</p>
           </div>
         </div>
         <div className="c">
           <input type="checkbox" id="faq-2" />
           <h1 className="question">
-            <label htmlFor="faq-2">With Pure Css ?</label>
+            <label htmlFor="faq-2">How to mint?</label>
           </h1>
           <div className="answer">
-            <p>Yes with pure CSS and HTML.</p>
+            <p>
+              You can mint Kemosabe by connecting Metamask or other web3 wallet and proceed with the
+              transaction.
+            </p>
           </div>
         </div>
         <div className="c">
           <input type="checkbox" id="faq-3" />
           <h1 className="question">
-            <label htmlFor="faq-3">Where did you get inpiration ?</label>
+            <label htmlFor="faq-3">How can you download Metamask wallet?</label>
           </h1>
           <div className="answer">
             <p>
-              I was inpired by an article on css-tricks.{' '}
-              <a href="https://css-tricks.com/the-checkbox-hack/" />
-              link to article
+              You can find it at <a href="https://metamask.io/">metamask.io</a>
             </p>
           </div>
         </div>

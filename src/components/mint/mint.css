@@ -12,7 +12,7 @@
     font-family: "Rowdies";
     color: #d3d3d3;
     font-size: 50px;
-    margin-left: 100px;
+    margin-left: 180px;
 }
 
 .action .mintBttn{
@@ -25,7 +25,7 @@
     font-family: "Rowdies";
     font-size: 30px;
     cursor: pointer;
-    margin-left: 270px;
+    margin-left: 320px;
     margin-top: 25px;
 }
 
@@ -185,19 +185,19 @@
 
     .action p{
         font-size: 18px;
-        margin-left: 18px;
+        margin-left: 30px;
     }
 
     .action .connectBttn{
         width: 220px;
         font-size: 18px;
-        margin-left: 88px;
+        margin-left: 15px;
     }
 
     .action .mintBttn{
         width: 150px;
         font-size: 20px;
-        margin-left: 120px;
+        margin-left: 40px;
     }
 
     .dot-elastic {
@@ -240,7 +240,7 @@
   .action .mintBttn{
     width: 120px;
     font-size: 18px;
-    margin-left: 100px;
+    margin-left: 25px;
   }
   .dot-elastic {
     margin-left: 20px;
@@ -256,9 +256,10 @@
   }
   .action p{
     font-size: 15px;
-    margin-left: 15px;
+    margin-left: 20px;
   }
   .action .connectBttn{
+    margin-left: 15px;
     width: 150px;
     font-size: 15px;
 }
@@ -266,7 +267,7 @@
 .action .mintBttn{
     width: 120px;
     font-size: 18px;
-    margin-left: 100px;
+    margin-left: 30px;
 }
 
 .dot-elastic {

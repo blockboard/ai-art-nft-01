@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import gif from './eth.gif';
 import './mint.css';
-import { addresses, AI_ART_ABI, TOTAL_SUPPLY, GAS_LIMIT } from '../../constants/contracts';
+import { addresses, KEMOSABE_ABI, TOTAL_SUPPLY, GAS_LIMIT } from '../../constants/contracts';
 import jsonFile from '../../data/hashed.json';
 
 const Mint = () => {
@@ -28,10 +28,10 @@ const Mint = () => {
       const network = await provider.getNetwork();
       const networkChainId = network.chainId;
 
-      if (networkChainId === 4) {
+      if (networkChainId === 1) {
         setCurrentAccount(signerAddress);
       } else {
-        alert('Change to Rinkeby Network');
+        alert('Change to Mainnet Network');
       }
     } catch (error) {
       throw new Error('An error happened in the ethereum checker.', { cause: error });
@@ -57,10 +57,10 @@ const Mint = () => {
         const network = await provider.getNetwork();
         const networkChainId = network.chainId;
 
-        if (networkChainId === 4) {
+        if (networkChainId === 1) {
           const contract = new ethers.Contract(
-            addresses[networkChainId].AI_ART,
-            AI_ART_ABI,
+            addresses[networkChainId].KEMOSABE,
+            KEMOSABE_ABI,
             signer
           );
 
@@ -82,22 +82,22 @@ const Mint = () => {
                 .connect(signer)
                 .mintItem(
                   currentAccount,
-                  jsonFile[currentTotalSupply + 1],
                   currentTotalSupply + 1,
+                  jsonFile[currentTotalSupply + 1],
                   rawTx
                 );
 
               setMiningAnimation(true);
               await tx.wait();
 
-              alert(`Mined, see transaction at: https://rinkeby.etherscan.io/tx/${tx.hash}`);
+              alert(`Mined, see transaction at: https://etherscan.io/tx/${tx.hash}`);
               setMiningAnimation(false);
             } catch (error) {
               throw new Error('An error happened in the ethereum checker.', { cause: error });
             }
           }
         } else {
-          alert('Change to Rinkeby Network');
+          alert('Change to Mainnet Network');
         }
       } catch (error) {
         throw new Error('An error happened in the ethereum checker.', { cause: error });
@@ -146,7 +146,7 @@ const Mint = () => {
             <img src={gif} alt="gif" />
           </div>
           <div className="action">
-            <p>Mint your generated NFT among 1000+ ones</p>
+            <p>Mint your Kemosabe</p>
             {currentAccount === '' ? renderNotConnectedContainer() : renderMintUI()}
           </div>
         </div>
@@ -158,7 +158,7 @@ const Mint = () => {
           <img src={gif} alt="gif" />
         </div>
         <div className="action">
-          <p>Mint your generated NFT among 1000+ ones</p>
+          <p>Mint your Kemosabe</p>
           <button className="mintingBttn mintBttn">
             Minting
             <div className="dot-elastic"></div>
