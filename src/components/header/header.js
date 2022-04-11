@@ -3,7 +3,7 @@ import './header.css';
 import logo from './logo.jpg';
 import twitter from './twitter.png';
 import discord from './discord.png';
-import { name, discord_invite } from '../../constants/contracts';
+import { TWITTER_USERNAME, DISCORD_INVITATION } from '../../constants/contracts';
 
 function header() {
   return (
@@ -30,14 +30,14 @@ function header() {
           </div>
           <div className="socialMedia">
             <a
-              href={`https://twitter.com/${name}`}
+              href={`https://twitter.com/${TWITTER_USERNAME}`}
               target="_blank"
               rel="noreferrer"
               className="socialMediaA">
               <img src={twitter} alt="twitter" />
             </a>
             <a
-              href={`https://discord.gg/${discord_invite}`}
+              href={`https://discord.gg/${DISCORD_INVITATION}`}
               target="_blank"
               rel="noreferrer"
               className="socialMediaA">

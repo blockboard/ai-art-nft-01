@@ -14,9 +14,9 @@ export const TOTAL_SUPPLY = 100;
 
 export const GAS_LIMIT = 400000;
 
-export const name = 'Crypto_kemosabe';
+export const TWITTER_USERNAME = 'Crypto_kemosabe';
 
-export const discord_invite = 'ne6PSwmq5d';
+export const DISCORD_INVITATION = 'ne6PSwmq5d';
 
 export const KEMOSABE_ABI = [
   {
