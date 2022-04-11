@@ -24,7 +24,7 @@ const App = () => {
           <div className="VCA">
             <p>Verified Contract Address</p>
             <a
-              href="https://etherscan.io/address/0xf8aac53aadcb4fc3326a440a83b3afead7732997"
+              href={`https://etherscan.io/address/${addresses[1].KEMOSABE}`}
               target="_blank"
               rel="noreferrer"
               className="address">
