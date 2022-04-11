@@ -1,26 +1,22 @@
 // The keys here are representing the chainIds
 export const addresses = {
+  1: {
+    KEMOSABE: '0xf8aac53aadcb4fc3326a440a83b3afead7732997',
+    SCAN_URL: 'https://etherscan.io/'
+  },
   4: {
-    AI_ART: '0x03a7e06c953e9c76dd5d179ab35c05d186e3365f',
+    KEMOSABE: '0x3D7B0c2f7113635bB7Eab8a29803198Fc7a6F782',
     SCAN_URL: 'https://rinkeby.etherscan.io/'
   }
 };
-
-export const BLOCKBOARD_ADDRESS = '0xB0D4afd8879eD9F52b28595d31B441D079B2Ca07';
 
 export const TOTAL_SUPPLY = 100;
 
 export const GAS_LIMIT = 400000;
 
-export const AI_ART_ABI = [
+export const KEMOSABE_ABI = [
   {
-    inputs: [
-      {
-        internalType: 'address payable',
-        name: 'treasury_',
-        type: 'address'
-      }
-    ],
+    inputs: [],
     stateMutability: 'nonpayable',
     type: 'constructor'
   },
@@ -78,19 +74,25 @@ export const AI_ART_ABI = [
     anonymous: false,
     inputs: [
       {
-        indexed: false,
+        indexed: true,
+        internalType: 'address',
+        name: 'user_',
+        type: 'address'
+      },
+      {
+        indexed: true,
         internalType: 'uint256',
-        name: 'index_',
+        name: 'tokenId_',
         type: 'uint256'
       },
       {
-        indexed: false,
+        indexed: true,
         internalType: 'string',
         name: 'tokenURI_',
         type: 'string'
       }
     ],
-    name: 'Claimed',
+    name: 'Minted',
     type: 'event'
   },
   {
@@ -251,14 +253,14 @@ export const AI_ART_ABI = [
         type: 'address'
       },
       {
-        internalType: 'string',
-        name: 'tokenURI_',
-        type: 'string'
-      },
-      {
         internalType: 'uint256',
         name: 'tokenId_',
         type: 'uint256'
+      },
+      {
+        internalType: 'string',
+        name: 'tokenURI_',
+        type: 'string'
       }
     ],
     name: 'mintItem',

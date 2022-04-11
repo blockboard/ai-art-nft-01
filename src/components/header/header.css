@@ -33,7 +33,7 @@
 }
 
 .sections{
-    margin-left: 500px;
+    margin-left: 470px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@
     }
     
     .sections{
-        margin-left: 55px;
+        margin-left: 33px;
     }
 
     .sections .socialMediaA img{
@@ -98,7 +98,7 @@
     }
     
     .sections{
-        margin-left: 85px;
+        margin-left: 80px;
     }
 
     .sections .socialMediaA img{
@@ -122,7 +122,7 @@
     }
 
     .sections{
-        margin-left: 100px;
+        margin-left: 83px;
     }
     
     .logo img{

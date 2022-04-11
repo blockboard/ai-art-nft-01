@@ -10,7 +10,7 @@ function header() {
       <div className="desktop-header">
         <div className="logo">
           <img src={logo} alt="logo" />
-          <h4>AI Art</h4>
+          <h4>Kemosabe</h4>
         </div>
         <div className="sections">
           <div className="parts">
@@ -29,14 +29,14 @@ function header() {
           </div>
           <div className="socialMedia">
             <a
-              href="https://twitter.com/"
+              href="https://twitter.com/Crypto_kemosabe"
               target="_blank"
               rel="noreferrer"
               className="socialMediaA">
               <img src={twitter} alt="twitter" />
             </a>
             <a
-              href="https://discord.com/"
+              href="https://discord.com/invite/QcHjVZKUCC"
               target="_blank"
               rel="noreferrer"
               className="socialMediaA">
