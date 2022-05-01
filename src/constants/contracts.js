@@ -18,6 +18,8 @@ export const TWITTER_USERNAME = 'Crypto_kemosabe';
 
 export const DISCORD_INVITATION = 'ne6PSwmq5d';
 
+export const OPENSEA_USERNAME = 'kemosabe';
+
 export const KEMOSABE_ABI = [
   {
     inputs: [],
