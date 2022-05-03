@@ -7,7 +7,7 @@ import Mint from './components/mint/mint';
 import Info from './components/info/info';
 import FAQ from './components/faq/faq';
 import KeyInfo from './components/keyInfo/keyInfo';
-import { addresses } from '../src/constants/contracts';
+import { addresses, OPENSEA_USERNAME } from '../src/constants/contracts';
 
 const App = () => {
   return (
@@ -31,7 +31,11 @@ const App = () => {
               {addresses[1].KEMOSABE}
             </a>
           </div>
-          <a href="https://opensea.io/" target="_blank" rel="noreferrer" className="socialMediaA">
+          <a
+            href={`https://opensea.io/collection/${OPENSEA_USERNAME}`}
+            target="_blank"
+            rel="noreferrer"
+            className="socialMediaA">
             <img src={openSea} alt="openSea" className="openSeaLogo"></img>
           </a>
         </div>
